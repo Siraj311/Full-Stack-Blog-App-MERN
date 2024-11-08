@@ -94,7 +94,18 @@ app.post('/post', uploadMiddleware.single('file'), async (req, res) => {
 })
 
 app.get('/post', async (req, res) => {
-  res.json(await Post.find().populate('author', ['username']));
+  res.json(
+    await Post.find()
+      .populate('author', ['username'])
+      .sort({createdAt: -1})
+      .limit(20)
+  );
+})
+
+app.get('/post/:id', async (req, res) => {
+  const {id} = req.params;
+  const postDoc = await Post.findById(id).populate('author', ['username']);
+  res.json(postDoc);
 })
 
 app.listen(4000);
