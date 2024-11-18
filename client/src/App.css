@@ -160,6 +160,19 @@ div.post-page a.edit-btn {
   padding: 15px 30px;
   border-radius: 5px;
   text-decoration: none;
+  margin: 0 10px;
+}
+
+div.post-page a.delete-btn {
+  background-color: #b81818;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #fff; 
+  padding: 15px 30px;
+  border-radius: 5px;
+  text-decoration: none;
+  margin: 0 10px;
 }
 
 a svg {
